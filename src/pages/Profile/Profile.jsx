@@ -6,9 +6,8 @@ export default function Profile() {
 
   return (
     <div className='profile'> 
-      <div>
-      <Link to='/shelf' className='shelf-btn'><br /></Link>
-    </div>
+      
+      <Link to='/shelf'><div className='shelf-btn'><img src='https://i.imgur.com/lseLJyX.gif'/></div></Link>
     </div>
   
   );
