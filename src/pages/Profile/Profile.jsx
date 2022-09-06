@@ -1,10 +1,15 @@
+import { Link } from 'react-router-dom';
+
 export default function Profile() {
 
 
 
   return (
-    <main className='profile'>
-    <h1 className='shelf-btn'><br /></h1>
-    </main>
+    <div className='profile'> 
+      <div>
+      <Link to='/shelf' className='shelf-btn'><br /></Link>
+    </div>
+    </div>
+  
   );
 }
