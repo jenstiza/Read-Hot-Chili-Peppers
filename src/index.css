@@ -42,27 +42,27 @@ code {
 
 
 .login-header{
-  background: linear-gradient(to top left, #663300 0%, #ffcccc 100%);
+  background-color:rgba(255, 255, 255, 0.427);
   border: 1vmin solid;
-  border-color: rgb(116, 52, 0);
-  border-radius: 15px 50px 30px;
-  font-family: 'Great Vibes', cursive;
+  border-color: rgb(0, 0, 0);
+  border-radius: 15vmin 50vmin 30vmin;
+  font-family: 'Press Start 2P', cursive;
   padding:6vmin;
-  font-size: 4vmin;
+  font-size: 4vh;
+  margin-left: 4vh;
+  margin-right: 4vh;
 }
 
 
 .login-container {
-    background: url(https://media1.thehungryjpeg.com/thumbs2/ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch-vintage-books-seamless-pattern-or-background.jpg);
+    background: url(https://i.pinimg.com/originals/16/89/5b/16895b231b6da505e2e4acef02a3c1fe.gif);
     height: 100vh;
     width: 100vw;
-    background-size: contain auto;
-    background-position: top;
+    background-size: cover;
+    background-position: center;
     display: grid;
     align-items: center;
     justify-content: center;
-    
-
 }
 
 code {
@@ -118,10 +118,10 @@ code {
 }
 
 .form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  padding: 4vmin;
+  background-color: brown;
+  border: 1vmin solid;
+  border-radius: 4vmin;
 }
 
 p.error-message {
@@ -192,10 +192,10 @@ button[type="submit"] {
 }
 
 .profile {
-  background-image: url(https://static01.nyt.com/images/2021/02/18/fashion/11ambience-videos-1/merlin_183424581_675ed475-cf23-43a6-bcff-b3254b0c621f-superJumbo.jpg?quality=75&auto=webp);
+  background-image: url(https://i.pinimg.com/originals/8d/a9/07/8da9074b5420a96f47a5941e0c317b58.gif);
   height: 100vh;
   width: 100vw;
-  background-size: contain auto;
+  background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
@@ -240,6 +240,20 @@ div > .shelf-btn {
   align-items: center;
   justify-content: center;
 }
+
+.shelf-header{
+  color: green;
+  background-color: black;
+  margin-left: 10vh;
+  margin-bottom: 90vh;
+  margin-right:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1vw;
+}
+
 
 .find-header{
   color: whitesmoke;
