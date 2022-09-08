@@ -228,6 +228,7 @@ div > .shelf-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat994.cur), auto !important;
 }
 
 .shelf-page{

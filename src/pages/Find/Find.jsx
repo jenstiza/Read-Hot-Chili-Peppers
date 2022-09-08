@@ -6,12 +6,12 @@ export default function Find() {
         <br/><br/>
         <br/><br/>
         <br/><br/>
-        <form action="/" method="GET">
+       {/* <form action="/" method="GET">*/}
         <div>
         <input type="text" placeholder="Enter your book name" className="search"  />
         <button><i className="fas fa-search"></i></button>
         </div>
-        </form>
+        {/*</form> */}
       </div>
     </>
   );
