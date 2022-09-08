@@ -7,10 +7,11 @@ import Find from '../Find/Find';
 import NavBar from '../../components/NavBar/NavBar';
 import Shelf from '../Shelf/Shelf';
 import './App.css';
+// import BookDetail from '../BookDetail/BookDetail';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-
+  
   return (
     <main className="App">
       { user ?
@@ -21,6 +22,8 @@ export default function App() {
             <Route path='/' element={<Profile />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/find' element={<Find />} />
+            {/* <Route path='/find/:bookTitle' element={<BookDetail books={books} />} /> */}
+            {/* books={displayBooks} */}
             <Route path='/shelf' element={<Shelf />} />
           </Routes>
         </>

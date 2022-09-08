@@ -1,11 +1,30 @@
+import { useState } from 'react';
+import * as booksApi from '../../utilities/books-api';
+import SearchResults from '../../components/SearchResults/SearchResults';
+
+
 export default function Find() {
-  // function handleResponse(response) {
-  //   for (var i = 0; i < response.items.length; i++) {
-  //     var item = response.items[i];
-  //     // in production code, item.text should have the HTML entities escaped.
-  //     document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-  //   }
-  // }
+  const [search, setSearch] = useState('');
+  const [bookResults, setBookResults] = useState([]); 
+ async function getBooks(evt){
+  evt.preventDefault()
+  let results = await booksApi.fetchBooks(search);
+  console.log(results);
+  setBookResults(results);
+ }
+
+function handleChange(evt){
+ setSearch(evt.target.value)
+}
+
+// useEffect(()=> {
+//   async function displayBooks() {
+//     const allBooks = await booksApi.displayBooks()
+//     setBookResults(allBooks)
+//   }
+//   displayBooks();
+// }, [])
+
   return (
     <>
       <div className="find">
@@ -13,15 +32,14 @@ export default function Find() {
         <br /><br />
         <br /><br />
         <br /><br />
-        {/* <form action="/" method="GET">*/}
-        <div>
-          <input type="text" placeholder="Enter your book name" className="search" />
-          <button type="submit" ><i className="fas fa-search"></i></button>
-        </div>
-        {/*</form> */}
+        <form onSubmit={getBooks}>          
+          <input type="text" placeholder="Enter your book name" className="search" value={search} onChange={handleChange} />
+          <div className='magnify'>
+          <button type="submit"><i className="fas fa-search"></i></button>
+          </div>
+          </form>
       </div>
-      {/* onSubmit={handleResponse} */}
-       {/* <script async src="https://www.googleapis.com/books/v1/volumes?q=search+terms&key=%REACT_APP_GOOGLE_API_KEY%"></script> */}
+      <SearchResults bookResults={bookResults}/>
     </>
   );
 }

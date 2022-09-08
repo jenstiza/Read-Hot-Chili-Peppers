@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
 }
 
 code {
@@ -48,7 +49,7 @@ code {
   border-radius: 15vmin 50vmin 30vmin;
   font-family: 'Press Start 2P', cursive;
   padding:8vmin;
-  height: 50vh;
+  min-height: 0vh;
   width: 80vw;
   font-size: 3.5vh;
   margin-left: 4vh;
@@ -59,13 +60,20 @@ code {
 
 .login-container {
     background: url(https://i.pinimg.com/originals/16/89/5b/16895b231b6da505e2e4acef02a3c1fe.gif);
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     background-size: cover;
     background-position: center;
     display: grid;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 
 code {
@@ -194,6 +202,14 @@ button[type="submit"] {
   margin: 1vmin 0 0;
 }
 
+.magnify {
+  display: inline;
+  margin-bottom: 32vh;
+  margin-left: 1vh;
+  align-items: center;
+  justify-content: center;
+}
+
 .profile {
   background-image: url(https://i.pinimg.com/originals/8d/a9/07/8da9074b5420a96f47a5941e0c317b58.gif);
   height: 100vh;
@@ -232,6 +248,7 @@ div > .shelf-btn {
   align-items: center;
   justify-content: center;
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat994.cur), auto !important;
+  
 }
 
 .shelf-page{
@@ -277,4 +294,55 @@ div > .shelf-btn {
   margin-left: -50vh;
   align-items: center;
   justify-content: center;
+}
+
+.results-header{
+  color: whitesmoke;
+  display: grid;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2vw;
+}
+
+.search-results{
+  background-image:url(https://c.tenor.com/4ryx66tWEhcAAAAd/pixel-study.gif);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: repeat(3, 2fr); 
+  align-items: left;
+  justify-content: left;
+  text-decoration: none;
+  margin: 1vh;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat994.cur), auto !important;
+}
+
+.book-card{
+  background-color: rgba(0, 0, 0, 0.542);
+  color: whitesmoke;
+  border-style: solid;
+  display: grid;
+  /* grid-template-columns: repeat(5, 1fr); */
+  align-items: stretch;
+  justify-items: stretch;
+  margin: 2vh;
+  font-family: 'Lobster', cursive;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.book-card:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+  color: black;
+  background-color: #00f2ff;
+  filter: drop-shadow(0 0 20px #00f2ff) contrast(2) brightness(2);
 }
