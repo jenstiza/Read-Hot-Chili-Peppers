@@ -7,7 +7,8 @@ export default function AuthPage({ setUser }) {
   
   return (
     <main className='login-container'>
-      <h1 className='login-header'>&#127798;&nbsp;Welcome to the Read Hot Chili Peppers &#127798;<br />&#128366;&nbsp;Rate Books you've already read and add new ones to your to be read - for a little shelf indulgence&nbsp;&#128366;<br />&#127798;Login or Sign Up to get started&nbsp;&#127798;</h1>
+      <h1 className='login-header'>&#127798;&nbsp;Welcome to Read Hot Chili Peppers! &#127798;<br /><br /><br />&#128366;&nbsp;Rate Books you've already read and add new ones to your to be read - for a little shelf indulgence&nbsp;&#128366;<br /><br /><br />&#127798;Login or Sign Up to get started&nbsp;&#127798;</h1>
+      <br/>
       <button onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? '🌶️Sign Up🌶️' : 'Log In'}
       </button>

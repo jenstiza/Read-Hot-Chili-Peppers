@@ -47,10 +47,13 @@ code {
   border-color: rgb(0, 0, 0);
   border-radius: 15vmin 50vmin 30vmin;
   font-family: 'Press Start 2P', cursive;
-  padding:6vmin;
-  font-size: 4vh;
+  padding:8vmin;
+  height: 50vh;
+  width: 80vw;
+  font-size: 3.5vh;
   margin-left: 4vh;
   margin-right: 4vh;
+  display: grid;
 }
 
 

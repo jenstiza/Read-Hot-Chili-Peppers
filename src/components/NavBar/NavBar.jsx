@@ -14,7 +14,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to='/find'>Find a book</Link>
       &nbsp; | &nbsp;
-      Welcome, {user.name}
+      Welcome Back, {user.name}!
       &nbsp; | &nbsp;
       <Link to='' onClick={handleLogOut}>Log Out</Link>
     </nav>
