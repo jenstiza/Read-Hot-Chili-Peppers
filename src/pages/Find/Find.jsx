@@ -1,30 +1,15 @@
 import { useState } from 'react';
-import * as booksApi from '../../utilities/books-api';
 import SearchResults from '../../components/SearchResults/SearchResults';
 
 
-export default function Find({getBooks, books}) {
-  const [search, setSearch] = useState('');
-  const [bookResults, setBookResults] = useState([]); 
-//  async function getBooks(evt){
-//   evt.preventDefault()
-//   let results = await booksApi.fetchBooks(search);
-//   console.log(results);
-//   setBooks(results);
-//   setBookResults(results);
-//  }
+export default function Find({getGoogleBooks, bookResults}) {
+  const [searchWord, setSearchWord] = useState('');
+  
+
 
 function handleChange(evt){
- setSearch(evt.target.value)
+ setSearchWord(evt.target.value)
 }
-
-// useEffect(()=> {
-//   async function displayBooks() {
-//     const allBooks = await booksApi.displayBooks()
-//     setBookResults(allBooks)
-//   }
-//   displayBooks();
-// }, [])
 
   return (
     <>
@@ -33,14 +18,14 @@ function handleChange(evt){
         <br /><br />
         <br /><br />
         <br /><br />
-        <form onSubmit={(evt) => getBooks(evt,search)}>          
-          <input type="text" placeholder="Enter your book name" className="search" value={search} onChange={handleChange} />
+        <form onSubmit={(evt) => getGoogleBooks(evt,searchWord)}>          
+          <input type="text" placeholder="Enter your book name" className="search" value={searchWord} onChange={handleChange} />
           <div className='magnify'>
           <button type="submit"><i className="fas fa-search"></i></button>
           </div>
           </form>
       </div>
-      <SearchResults books={books}/>
+      <SearchResults bookResults={bookResults}/>
     </>
   );
 }

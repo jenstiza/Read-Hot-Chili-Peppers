@@ -1,28 +1,32 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import * as booksApi from '../../utilities/books-api';
+import { useState, useEffect  } from 'react';
+import './bookDetail.css';
 
 
-export default function BookDetail({ books }) {
+export default function BookDetail({ bookResults, addToShelf }) {
   const { bookId } = useParams();
-  const [book, setBook] = useState(null);
-  // const [correctBook, setCorrectBook] = useState(null);
-  useEffect(()=> {
-    // if(!book) return
-    async function getDetail(){
-      const bookDeets = await booksApi.getBook(bookId);
-       setBook(bookDeets);
-      // console.log(bookDeets);
-    }
-    getDetail();
-  }, [] )
-  console.log(book);
+  const [bookDetail, setBookDetail] = useState(null);
+  console.log(bookResults);
   // const correctBook = books.find(b => console.log(b));
-  const correctBook = books.find(b => b.volumeInfo.title === book && book.volumeInfo.title);
-   console.log(correctBook);
+  useEffect(()=>{
+    const correctBook = bookResults.find(b => b.id === bookId);
+    setBookDetail(correctBook);
+  }, [bookResults, bookId]);
+
+  addToShelf(bookId);
+
   return (
         <div>
-        {/* {book} */}
+      {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover"/> }
+      {bookDetail && <p>{bookDetail.volumeInfo.averageRating}</p>}
+      { bookDetail && <p>{bookDetail.volumeInfo.title}</p> }
+      { bookDetail && <p>{bookDetail.volumeInfo.authors[0]} </p> }
+      {bookDetail && <p>{bookDetail.volumeInfo.description}</p>}
+      
+      <p></p>
+      <p></p> 
+      <p>Hello</p>
+      <button onClick={addToShelf}>Add To Shelf</button>
         </div>
   );
 }

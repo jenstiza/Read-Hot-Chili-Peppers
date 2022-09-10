@@ -3,11 +3,13 @@ const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const fetch = require('node-fetch');
 const express = require('express');
 const router = express.Router();
+const Bookshelf = require('../../models/shelf');
 
 module.exports = {
   fetchBooks,
   displayBooks,
   bookResult,
+  // addToShelf,
 };
 
 async function fetchBooks(req, res){
@@ -37,7 +39,22 @@ async function fetchBooks(req, res){
         }
       } 
 
-
+    //   async function addToShelf(req, res) {
+    //     const newBook = await Book.formatBookInfo(req.body);
+    //     const formattedBook = await Book.newBook(newBook);
+    //     const shelf = await Bookshelf.findOne({userId: req.user._id}).exec();
+    //     let inShelf = shelf.userBooks.some(userBook => userBook.book._id.equals(formattedBook._id));
+    //     if (inShelf) {
+    //         const updatedInShelf = await Bookshelf.findOne({ userId: req.user._id })
+    //             .populate('userBooks.book').exec();
+    //        return res.json(updatedInShelf);
+    //     }
+    //     shelf.userBooks.push({book: formattedBook._id})
+    //     await shelf.save()
+    //     const updatedNotInShelf = await Bookshelf.findOne({ userId: req.user._id })
+    //         .populate('userBooks.book').exec();
+    //     res.json(updatedNotInShelf);
+    // }
 
 
 async function displayBooks(req,res) {

@@ -13,13 +13,18 @@ import * as booksApi from '../../utilities/books-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [books, setBooks] = useState([]);
-  async function getBooks(evt, search){
+  const [bookResults, setBookResults] = useState([]); 
+  const [bookShelf, setBookShelf] = useState([]);
+  async function getGoogleBooks(evt, search){
   evt.preventDefault()
   let results = await booksApi.fetchBooks(search);
   console.log(results);
-  setBooks(results);
+  setBookResults(results);
   }
+  async function addToShelf(bookId){
+    let userBookShelf = await booksApi.addToShelf(bookId);
+    setBookShelf(userBookShelf);
+    }
 
   return (
     <main className="App">
@@ -30,8 +35,8 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/' element={<Profile />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/find' element={<Find getBooks={getBooks} books={books} />} />
-            <Route path='/find/:bookId' element={<BookDetail books={books} />} /> 
+            <Route path='/find' element={<Find getGoogleBooks={getGoogleBooks} bookResults={bookResults} />} />
+            <Route path='/find/:bookId' element={<BookDetail bookResults={bookResults} addToShelf={addToShelf} />} /> 
             {/* books={displayBooks} */}
             <Route path='/shelf' element={<Shelf />} />
           </Routes>
