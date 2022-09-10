@@ -1,7 +1,7 @@
 import BookCard from "../BookCard/BookCard";
 
-export default function SearchResults({bookResults}) {
-    const book = bookResults.map((b, idx) => <BookCard book = {b.volumeInfo} />)
+export default function SearchResults({books}) {
+    const book = books.map((b, idx) => <BookCard book = {b} />)
 
 
 

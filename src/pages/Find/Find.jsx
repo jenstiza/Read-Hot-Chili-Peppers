@@ -3,15 +3,16 @@ import * as booksApi from '../../utilities/books-api';
 import SearchResults from '../../components/SearchResults/SearchResults';
 
 
-export default function Find() {
+export default function Find({getBooks, books}) {
   const [search, setSearch] = useState('');
   const [bookResults, setBookResults] = useState([]); 
- async function getBooks(evt){
-  evt.preventDefault()
-  let results = await booksApi.fetchBooks(search);
-  console.log(results);
-  setBookResults(results);
- }
+//  async function getBooks(evt){
+//   evt.preventDefault()
+//   let results = await booksApi.fetchBooks(search);
+//   console.log(results);
+//   setBooks(results);
+//   setBookResults(results);
+//  }
 
 function handleChange(evt){
  setSearch(evt.target.value)
@@ -32,14 +33,14 @@ function handleChange(evt){
         <br /><br />
         <br /><br />
         <br /><br />
-        <form onSubmit={getBooks}>          
+        <form onSubmit={(evt) => getBooks(evt,search)}>          
           <input type="text" placeholder="Enter your book name" className="search" value={search} onChange={handleChange} />
           <div className='magnify'>
           <button type="submit"><i className="fas fa-search"></i></button>
           </div>
           </form>
       </div>
-      <SearchResults bookResults={bookResults}/>
+      <SearchResults books={books}/>
     </>
   );
 }

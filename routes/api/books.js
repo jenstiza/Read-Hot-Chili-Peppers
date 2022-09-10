@@ -5,6 +5,6 @@ const bookCtrl = require('../../controllers/api/books');
 
 router.get('/:word', bookCtrl.fetchBooks);
 router.get('/find', bookCtrl.displayBooks);
-
+router.post('/:id', bookCtrl.bookResult);
 
 module.exports = router;

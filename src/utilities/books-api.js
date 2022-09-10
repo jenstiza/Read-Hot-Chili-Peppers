@@ -8,3 +8,7 @@ export function fetchBooks(word) {
 export function displayBooks(){
     return sendRequest(`${BASE_URL}`);
 }
+
+export function getBook(id){
+   return sendRequest(`${BASE_URL}/${id}`, 'POST', {id});
+}
