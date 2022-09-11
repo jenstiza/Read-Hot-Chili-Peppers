@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './Profile.css';
 
 export default function Profile() {
 
@@ -6,8 +7,8 @@ export default function Profile() {
 
   return (
     <div className='profile'> 
-      
-      <Link to='/shelf'><div className='shelf-btn'><img src='https://i.imgur.com/lseLJyX.gif' alt=""/></div></Link>
+    <div className='shelf-btn'><Link to='/shelf'><img src='https://i.imgur.com/lseLJyX.gif' alt="" /></Link>
+    </div>
     </div>
   
   );
