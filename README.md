@@ -8,7 +8,7 @@
 
 ## Preview ##
 
-![Logging In]()
+![Logging In](https://imgur.com/8tv79p8)
 ![Profile]()
 ![Find A Book]()
 ![Book Search Results]()

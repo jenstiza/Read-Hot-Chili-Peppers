@@ -13,6 +13,6 @@ export function getBook(id){
    return sendRequest(`${BASE_URL}/${id}`, 'POST', {id});
 }
 
-export function addToShelf(id){
-  return sendRequest(`${BASE_URL}/add/${id}`);
-}
+// export function addToShelf(id){
+//   return sendRequest(`${BASE_URL}/add/${id}`);
+// }

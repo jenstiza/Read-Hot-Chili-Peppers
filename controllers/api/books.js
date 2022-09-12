@@ -3,13 +3,13 @@ const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const fetch = require('node-fetch');
 const express = require('express');
 const router = express.Router();
-const Bookshelf = require('../../models/shelf');
+// const Bookshelf = require('../../models/shelf');
 
 module.exports = {
   fetchBooks,
-  // displayBooks,
+  displayBooks,
   bookResult,
-  addToShelf,
+  // addToShelf,
 };
 
 async function fetchBooks(req, res){
@@ -39,17 +39,17 @@ async function fetchBooks(req, res){
         }
       } 
 
-      async function addToShelf(req, res) {
-        const shelf = await Book.findById(req.params.id);
-        req.body.user = req.user._id;
-        shelf.books.push(req.body);
-        await book.save();
-       res.json(books);
-      }
+      // async function addToShelf(req, res) {
+      //   const shelf = await Book.findById(req.params.id);
+      //   req.body.user = req.user._id;
+      //   shelf.books.push(req.body);
+      //   await book.save();
+      //  res.json(books);
+      // }
 
 
 
-// async function displayBooks(req,res) {
-//  const book = await Book.find({})
-//  res.json(book)
-// }
+async function displayBooks(req,res) {
+ const book = await Book.find({})
+ res.json(book)
+}

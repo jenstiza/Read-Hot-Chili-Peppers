@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect  } from 'react';
 import './bookDetail.css';
 
-
-export default function BookDetail({ bookResults, addToShelf }) {
+//addToShelf
+export default function BookDetail({ bookResults }) {
   const { bookId } = useParams();
   const [bookDetail, setBookDetail] = useState(null);
   console.log(bookResults);
@@ -28,7 +28,7 @@ export default function BookDetail({ bookResults, addToShelf }) {
       <p></p>
       <p></p> 
       <p></p>
-      <button onClick={() => addToShelf(bookId)}>Add To Shelf</button>
+      {/* <button onClick={() => addToShelf(bookId)}>Add To Shelf</button> */}
         </div>
         
   );
