@@ -9,15 +9,15 @@
 
 .cover{
   height: 10em;
-  left: 50%;
+  left: 45%;
   margin-top: -2em;
   margin-left: -4em;
   margin-bottom: 5em;
   position: relative;
   top: 30%;
-  width: 8em;
+  width: 10em;
   border: 1em ridge;
-  border-color: rgba(3, 255, 3, 0.618);
+  border-color: black;
   border-radius: 10em 10em 10em 10em;
 }
 

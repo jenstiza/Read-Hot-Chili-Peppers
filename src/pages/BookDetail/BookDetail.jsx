@@ -13,7 +13,7 @@ export default function BookDetail({ bookResults, addToShelf }) {
     setBookDetail(correctBook);
   }, [bookResults, bookId]);
 
-  addToShelf(bookId);
+  // addToShelf(bookId);
 
   return (
         
@@ -28,7 +28,7 @@ export default function BookDetail({ bookResults, addToShelf }) {
       <p></p>
       <p></p> 
       <p></p>
-      <button onClick={addToShelf}>Add To Shelf</button>
+      <button onClick={() => addToShelf(bookId)}>Add To Shelf</button>
         </div>
         
   );

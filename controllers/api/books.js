@@ -9,7 +9,7 @@ module.exports = {
   fetchBooks,
   displayBooks,
   bookResult,
-  // addToShelf,
+  addToShelf,
 };
 
 async function fetchBooks(req, res){
@@ -38,6 +38,13 @@ async function fetchBooks(req, res){
           res.status(500).json(err);
         }
       } 
+
+      // async function addToShelf(req, res) {
+      //   const books = await book.find({}).sort('title').populate('category').exec();
+      //   // re-sort based upon the sortOrder of the categories
+      //   items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+      //   res.json(items);
+      // }
 
     //   async function addToShelf(req, res) {
     //     const newBook = await Book.formatBookInfo(req.body);
