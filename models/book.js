@@ -7,13 +7,25 @@ const bookSchema = new Schema({
       type: String,
       required: true
     },
-    author: {
-      type: String,
-      required: true
-    },
+    author: [String],
+
     description: {
       type: String,
+      required: true,
+    },
+
+    googleId: {
+      type:String,
       required: true
+    },
+
+    cover: {
+      type: String,
+
+    },
+
+    averageRating: {
+      type:Number,
     }
     
   });

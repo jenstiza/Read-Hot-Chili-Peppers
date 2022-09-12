@@ -3,24 +3,22 @@ const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const fetch = require('node-fetch');
 const express = require('express');
 const router = express.Router();
-// const Bookshelf = require('../../models/shelf');
+const Bookshelf = require('../../models/bookShelf');
 
 module.exports = {
   fetchBooks,
   displayBooks,
   bookResult,
-  // addToShelf,
+  addToShelf,
 };
 
 async function fetchBooks(req, res){
-  console.log(req.body, req.params.word, 'testing');
     let query = req.params.word;
     try {
          let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=25&key=${API_KEY}`, {
           method: 'GET'
           })
         const books = await results.json();
-        console.log(books);
          res.json(books.items);
       } catch (err) {
         res.status(500).json(err);
@@ -28,26 +26,45 @@ async function fetchBooks(req, res){
     } 
 
     async function bookResult(req, res){
-      console.log('hello');
       try {
             let results = await fetch(`https://www.googleapis.com/books/v1/volumes/${req.body.id}?key=${API_KEY}`, {
               method: 'GET'
             })
           const book = await results.json();
-          console.log(book, 'book');
            res.json(book);
         } catch (err) {
           res.status(500).json(err);
         }
       } 
 
-      // async function addToShelf(req, res) {
-      //   const shelf = await Book.findById(req.params.id);
-      //   req.body.user = req.user._id;
-      //   shelf.books.push(req.body);
-      //   await book.save();
-      //  res.json(books);
-      // }
+      async function addToShelf(req, res) {
+        console.log('addToShelf', req.body.id);
+         const bookInDb = await Book.findOne({googleId: req.body.id}) 
+         console.log(bookInDb, 'book database');
+         const bookShelf = await Bookshelf.findOne({userId: req.user._id}) 
+        if(bookInDb){
+          await bookShelf.books.push(bookInDb._id);
+          await bookShelf.save();
+          const shelf = await Bookshelf.findOne({userId: req.user._id}).populate('books').exec();
+          res.json(shelf);
+          } else {
+            const formattedBook = {
+              title: req.body.volumeInfo.title,
+              author: req.body.volumeInfo.authors,
+              description: req.body.volumeInfo.description,
+              googleId: req.body.id,
+              cover: req.body.volumeInfo.imageLinks.smallThumbnail,
+              averageRating: req.body.volumeInfo.averageRating,
+            } 
+           let newBook = await Book.create(formattedBook);
+           await bookShelf.books.push(newBook._id);
+           await bookShelf.save();
+           const shelf = await Bookshelf.findOne({userId: req.user._id}).populate('books').exec();
+          res.json(shelf);
+            
+          }
+
+      }
 
 
 

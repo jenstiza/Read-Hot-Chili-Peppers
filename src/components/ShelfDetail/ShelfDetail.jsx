@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ShelfCard from '../ShelfCard/ShelfCard';
+import Shelf from '../../pages/Shelf/Shelf';
+
+
+
 
 export default function ShelfDetail({ bookShelf }){
 

@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 
+
 export default function ShelfCard({book}) {
     
     return (
       <div className='book-card'>
         <Link to={`/shelf/${book._id}`}>
-        {book.volumeInfo.title}
+        {book.title}
         <br/>
-        {book.volumeInfo.subtitle}
+        {book.cover}
         <br/>
-        {book.volumeInfo.authors}
+        {book.author}
         <br/>
+        {book.averageRating}
         </Link>
       </div>
     );

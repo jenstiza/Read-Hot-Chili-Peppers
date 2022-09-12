@@ -11,9 +11,10 @@ export function getShelf(){
 }
 
 export function getBook(id){
-   return sendRequest(`${BASE_URL}/${id}`, 'POST', {id});
+   return sendRequest(`${BASE_URL}/${id}` );
 }
 
-export function addToShelf(id){
-  return sendRequest(`${BASE_URL}/add/${id}`);
+export function addToShelf(book){
+  console.log(book, 'bookapi');
+  return sendRequest(`${BASE_URL}/addbook`, 'POST', book);
 }

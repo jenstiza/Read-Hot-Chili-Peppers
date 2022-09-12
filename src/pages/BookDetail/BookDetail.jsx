@@ -6,8 +6,7 @@ import './bookDetail.css';
 export default function BookDetail({ bookResults, addBook }) {
   const { bookId } = useParams();
   const [bookDetail, setBookDetail] = useState(null);
-  console.log(bookResults);
-  // const correctBook = books.find(b => console.log(b));
+  
   useEffect(()=>{
     const correctBook = bookResults.find(b => b.id === bookId);
     setBookDetail(correctBook);
@@ -28,7 +27,7 @@ export default function BookDetail({ bookResults, addBook }) {
       <p></p>
       <p></p> 
       <p></p>
-      <button onClick={() => addBook(bookDetail.id)}>Add To Shelf</button>
+      <button onClick={() => addBook(bookDetail)}>Add To Shelf</button>
         </div>
         
   );
