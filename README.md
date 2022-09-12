@@ -8,9 +8,9 @@
 
 ## Preview ##
 
-![Logging In](https://imgur.com/p7XfyRl.png)
-![Profile](https://imgur.com/wgd9Oaw.png)
-![Find A Book](https://imgur.com/UZ0aIS5.png)
+![Logging In]()
+![Profile]()
+![Find A Book]()
 ![Book Search Results]()
 ![Shelf]()
 
