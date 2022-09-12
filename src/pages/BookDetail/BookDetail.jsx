@@ -3,7 +3,7 @@ import { useState, useEffect  } from 'react';
 import './bookDetail.css';
 
 //addToShelf
-export default function BookDetail({ bookResults }) {
+export default function BookDetail({ bookResults, addBook }) {
   const { bookId } = useParams();
   const [bookDetail, setBookDetail] = useState(null);
   console.log(bookResults);
@@ -28,7 +28,7 @@ export default function BookDetail({ bookResults }) {
       <p></p>
       <p></p> 
       <p></p>
-      {/* <button onClick={() => addToShelf(bookId)}>Add To Shelf</button> */}
+      <button onClick={() => addBook(bookDetail.id)}>Add To Shelf</button>
         </div>
         
   );

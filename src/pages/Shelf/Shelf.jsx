@@ -1,12 +1,11 @@
-import BookDetail from '../BookDetail/BookDetail';
+import ShelfCard from '../../components/ShelfCard/ShelfCard';
 import './Shelf.css';
 
-export default function Shelf({ bookId, addToShelf }) {
-  const books = bookId.map(book =>
-    <BookDetail
-      key={book}
-      bookDetail={book}
-      addToShelf={addToShelf}
+export default function Shelf({ bookShelf }) {
+  const books = bookShelf.map(book =>
+    <ShelfCard
+      key={book._id}
+      book={book}
     />
   );
 

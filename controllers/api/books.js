@@ -13,12 +13,14 @@ module.exports = {
 };
 
 async function fetchBooks(req, res){
+  console.log(req.body, req.params.word, 'testing');
     let query = req.params.word;
     try {
          let results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=25&key=${API_KEY}`, {
           method: 'GET'
           })
         const books = await results.json();
+        console.log(books);
          res.json(books.items);
       } catch (err) {
         res.status(500).json(err);
