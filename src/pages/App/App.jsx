@@ -21,7 +21,7 @@ export default function App() {
   console.log(results);
   setBookResults(results);
   }
-  async function addToShelf(bookId){
+  async function addBook(bookId){
     let userBookShelf = await booksApi.addToShelf(bookId);
     setBookShelf(userBookShelf);
     }
