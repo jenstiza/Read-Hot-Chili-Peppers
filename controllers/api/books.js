@@ -7,7 +7,7 @@ const Bookshelf = require('../../models/shelf');
 
 module.exports = {
   fetchBooks,
-  displayBooks,
+  // displayBooks,
   bookResult,
   addToShelf,
 };
@@ -39,32 +39,17 @@ async function fetchBooks(req, res){
         }
       } 
 
-      // async function addToShelf(req, res) {
-      //   const books = await book.find({}).sort('title').populate('category').exec();
-      //   // re-sort based upon the sortOrder of the categories
-      //   items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
-      //   res.json(items);
-      // }
-
-    //   async function addToShelf(req, res) {
-    //     const newBook = await Book.formatBookInfo(req.body);
-    //     const formattedBook = await Book.newBook(newBook);
-    //     const shelf = await Bookshelf.findOne({userId: req.user._id}).exec();
-    //     let inShelf = shelf.userBooks.some(userBook => userBook.book._id.equals(formattedBook._id));
-    //     if (inShelf) {
-    //         const updatedInShelf = await Bookshelf.findOne({ userId: req.user._id })
-    //             .populate('userBooks.book').exec();
-    //        return res.json(updatedInShelf);
-    //     }
-    //     shelf.userBooks.push({book: formattedBook._id})
-    //     await shelf.save()
-    //     const updatedNotInShelf = await Bookshelf.findOne({ userId: req.user._id })
-    //         .populate('userBooks.book').exec();
-    //     res.json(updatedNotInShelf);
-    // }
+      async function addToShelf(req, res) {
+        const shelf = await Book.findById(req.params.id);
+        req.body.user = req.user._id;
+        shelf.books.push(req.body);
+        await book.save();
+       res.json(books);
+      }
 
 
-async function displayBooks(req,res) {
- const book = await Book.find({})
- res.json(book)
-}
+
+// async function displayBooks(req,res) {
+//  const book = await Book.find({})
+//  res.json(book)
+// }

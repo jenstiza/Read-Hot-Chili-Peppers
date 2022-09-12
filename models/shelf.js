@@ -24,15 +24,13 @@ const bookshelfSchema = new Schema({
 }, {timestamps: true});
 
 
-bookshelfSchema.statics.addBookToShelf = async function (bookId) {
+bookshelfSchema.statics.addToShelf = async function (bookId) {
     const shelf = this;
     const book = this.library.findOne(book => book._id.equals(bookId));
     if (book) {
-        console.log(book, "addbook")
-        console.log('bookshelf')
         return;
     } else {
-        const book = await mongoose.model('Book').findById(bookId);
+        const book = await mongoose.model('book').findById(bookId);
         shelf.library.push({ book });
     }
     return shelf.save();
