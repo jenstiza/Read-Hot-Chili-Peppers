@@ -17,10 +17,10 @@ export default function App() {
   const [bookResults, setBookResults] = useState([]); 
   const [bookShelf, setBookShelf] = useState([]);
   async function getGoogleBooks(evt, search){
-  evt.preventDefault()
-  let results = await booksApi.fetchBooks(search);
-  console.log(results);
-  setBookResults(results);
+    evt.preventDefault()
+    let results = await booksApi.fetchBooks(search);
+    console.log(results);
+    setBookResults(results);
   }
 
 
@@ -34,7 +34,7 @@ export default function App() {
       const books = await booksApi.getShelf();
       setBookShelf(books)
     }
-    getMyShelf();
+    if (user) getMyShelf();
   }, []);
 
   return (
