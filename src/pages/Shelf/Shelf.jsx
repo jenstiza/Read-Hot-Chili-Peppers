@@ -1,3 +1,5 @@
+import './Shelf.css';
+
 export default function Shelf() {
 
 

@@ -16,17 +16,20 @@ export default function BookDetail({ bookResults, addToShelf }) {
   addToShelf(bookId);
 
   return (
-        <div>
-      {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover"/> }
-      {bookDetail && <p>{bookDetail.volumeInfo.averageRating}</p>}
-      { bookDetail && <p>{bookDetail.volumeInfo.title}</p> }
-      { bookDetail && <p>{bookDetail.volumeInfo.authors[0]} </p> }
-      {bookDetail && <p>{bookDetail.volumeInfo.description}</p>}
-      
+        
+          
+        <div className='book-details'>
+      {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover" className='cover'/> }
+      {bookDetail && <p>Average Rating: {bookDetail.volumeInfo.averageRating} &#127798;</p>}
+      {bookDetail && <p>Title: {bookDetail.volumeInfo.title}</p> }
+      {bookDetail && <p> Authors: {bookDetail.volumeInfo.authors[0]} </p> }
+      {bookDetail && <p>Description: {bookDetail.volumeInfo.description}</p>}
+      {bookDetail && <a href= {bookDetail.volumeInfo.previewLink}>Preview Here</a>}
       <p></p>
       <p></p> 
-      <p>Hello</p>
+      <p></p>
       <button onClick={addToShelf}>Add To Shelf</button>
         </div>
+        
   );
 }
