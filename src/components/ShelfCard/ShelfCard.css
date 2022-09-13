@@ -4,7 +4,7 @@
     border:.5em;
     border-style: solid;
     border-radius: 2em;
-    padding:1em;
+    padding:4em;
     display: grid;
     align-items: stretch;
     justify-items: stretch;
@@ -14,10 +14,3 @@
     font-size: 1.5rem;
   }
 
-  .shelf-card:hover {
-    transform: scale(1.2);
-    text-decoration: none;
-    color: black;
-    background-color: #000000;
-    filter: drop-shadow(0 0 20px #00f2ff) contrast(2) brightness(2);
-  }

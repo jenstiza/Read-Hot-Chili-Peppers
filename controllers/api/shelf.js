@@ -11,6 +11,6 @@ module.exports = {
 
 
 async function getAll(req,res) {
-    const shelf = await Bookshelf.findOne({userId: req.user._id})
+    const shelf = await Bookshelf.findOne({userId: req.user._id}).populate('books').exec()
     res.json(shelf)
    }

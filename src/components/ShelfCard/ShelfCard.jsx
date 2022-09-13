@@ -5,14 +5,13 @@ export default function ShelfCard({book}) {
     console.log(book);
     return (
       <div className='shelf-card'>
-        {book}
-        {/* {book.title}
+        {book.title}
         <br/>
-        {book.cover}
+        <img src={book.cover} />
         <br/>
         {book.author}
         <br/>
-        {book.averageRating} */}
+        {book.averageRating}
       </div>
     );
   }
