@@ -10,6 +10,7 @@ import ShelfDetail from '../../components/ShelfDetail/ShelfDetail';
 import './App.css';
 import BookDetail from '../BookDetail/BookDetail';
 import * as booksApi from '../../utilities/books-api';
+import * as shelfAPI from '../../utilities/shelf-api';
 
 
 export default function App() {
@@ -17,25 +18,24 @@ export default function App() {
   const [bookResults, setBookResults] = useState([]); 
   const [bookShelf, setBookShelf] = useState([]);
   async function getGoogleBooks(evt, search){
-    evt.preventDefault()
-    let results = await booksApi.fetchBooks(search);
-    console.log(results);
-    setBookResults(results);
+  evt.preventDefault()
+  let results = await booksApi.fetchBooks(search);
+  console.log(results);
+  setBookResults(results);
   }
 
 
-  async function addBook(book){
-    let userBookShelf = await booksApi.addToShelf(book);
-    console.log(userBookShelf);
+  async function addBook(bookId){
+    let userBookShelf = await booksApi.addToShelf(bookId);
     setBookShelf(userBookShelf);
     }
 
   useEffect(()=>{
     async function getMyShelf(){
-      const books = await booksApi.getShelf();
+      const books = await shelfAPI.getShelf();
       setBookShelf(books)
     }
-    if (user) getMyShelf();
+    getMyShelf();
   }, []);
 
   return (

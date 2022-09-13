@@ -60,6 +60,7 @@ async function fetchBooks(req, res){
            await bookShelf.books.push(newBook._id);
            await bookShelf.save();
            const shelf = await Bookshelf.findOne({userId: req.user._id}).populate('books').exec();
+           console.log(bookShelf);
           res.json(shelf);
             
           }

@@ -1,19 +1,18 @@
-import { Link } from 'react-router-dom';
-
+import './ShelfCard.css';
 
 export default function ShelfCard({book}) {
-    
+    // console.log(book.title);
+    console.log(book);
     return (
-      <div className='book-card'>
-        <Link to={`/shelf/${book._id}`}>
-        {book.title}
+      <div className='shelf-card'>
+        {book}
+        {/* {book.title}
         <br/>
         {book.cover}
         <br/>
         {book.author}
         <br/>
-        {book.averageRating}
-        </Link>
+        {book.averageRating} */}
       </div>
     );
   }

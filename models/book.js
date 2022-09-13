@@ -27,6 +27,7 @@ const bookSchema = new Schema({
     averageRating: {
       type:Number,
     }
+
     
   });
   
