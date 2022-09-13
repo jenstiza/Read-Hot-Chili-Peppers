@@ -4,13 +4,14 @@
     border:.5em;
     border-style: solid;
     border-radius: 2em;
-    padding:4em;
-    display: grid;
-    align-items: stretch;
-    justify-items: stretch;
-    margin: 2vh;
+    padding:2.5em;
+    display: table;
+    align-items: center;
+    justify-items: center;
+    margin-top: 4em;
     font-family: 'Lobster', cursive;
     text-decoration: none;
     font-size: 1.5rem;
+    
   }
 

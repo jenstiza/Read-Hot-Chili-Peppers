@@ -1,16 +1,17 @@
 import './ShelfCard.css';
+import { Link } from 'react';
 
 export default function ShelfCard({book}) {
 
   return (
     <div className='shelf-card'>
-      {book.title}
+     <img src={book.cover} /> 
       <br/>
-      <img src={book.cover} />
+      Title: {book.title} 
       <br/>
-      {book.author}
+      Author: {book.author}
       <br/>
-      {book.averageRating}
+      Average Chili Pepper Rating: {book.averageRating} &#127798;
     </div>
   );
 }
