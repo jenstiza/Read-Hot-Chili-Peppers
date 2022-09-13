@@ -5,11 +5,9 @@ import './Find.css';
 export default function Find({getGoogleBooks, bookResults}) {
   const [searchWord, setSearchWord] = useState('');
   
-
-
-function handleChange(evt){
- setSearchWord(evt.target.value)
-}
+  function handleChange(evt){
+    setSearchWord(evt.target.value)
+  }
 
   return (
     <>
@@ -23,7 +21,7 @@ function handleChange(evt){
           <div className='magnify'>
           <button type="submit"><i className="fas fa-search"></i></button>
           </div>
-          </form>
+        </form>
       </div>
       <SearchResults bookResults={bookResults}/>
     </>

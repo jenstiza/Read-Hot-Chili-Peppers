@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect  } from 'react';
 import './bookDetail.css';
+import { Link } from 'react-router-dom';
 
-//addToShelf
+
 export default function BookDetail({ bookResults, addBook }) {
   const { bookId } = useParams();
   const [bookDetail, setBookDetail] = useState(null);
@@ -12,23 +13,16 @@ export default function BookDetail({ bookResults, addBook }) {
     setBookDetail(correctBook);
   }, [bookResults, bookId]);
 
-  // addToShelf(bookId);
 
   return (
-        
-          
-        <div className='book-details'>
+    <div className='book-details'>
       {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover" className='cover'/> }
       {bookDetail && <p>Average Rating: {bookDetail.volumeInfo.averageRating} &#127798;</p>}
       {bookDetail && <p>Title: {bookDetail.volumeInfo.title}</p> }
       {bookDetail && <p> Authors: {bookDetail.volumeInfo.authors[0]} </p> }
       {bookDetail && <p>Description: {bookDetail.volumeInfo.description}</p>}
       {bookDetail && <a href= {bookDetail.volumeInfo.previewLink}>Preview Here</a>}
-      <p></p>
-      <p></p> 
-      <p></p>
-      <button onClick={() => addBook(bookDetail)}>Add To Shelf</button>
-        </div>
-        
+      <Link to="/shelf"><button onClick={() => addBook(bookDetail)}>Add To Shelf</button></Link>
+    </div>   
   );
 }

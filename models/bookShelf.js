@@ -3,13 +3,16 @@ const Schema = mongoose.Schema;
 
 
 const bookShelfSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId, 
-        ref: "User"
-      },
-    books: [{type: Schema.Types.ObjectId, 
-        ref: "Book"}],
+  userId: {
+    type: Schema.Types.ObjectId, 
+    ref: "User"
+  },
+
+  books: [{
+    type: Schema.Types.ObjectId, 
+    ref: "Book"
+  }],
     
-  });
+});
   
-  module.exports = mongoose.model('BookShelf', bookShelfSchema);
+module.exports = mongoose.model('BookShelf', bookShelfSchema);

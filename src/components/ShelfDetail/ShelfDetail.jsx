@@ -4,18 +4,15 @@ import ShelfCard from '../ShelfCard/ShelfCard';
 import Shelf from '../../pages/Shelf/Shelf';
 
 
-
-
 export default function ShelfDetail({ bookShelf }){
+  const { bookId } = useParams();
+  const [bookDetail, setBookDetail] = useState(null);
 
-    const { bookId } = useParams();
-    const [bookDetail, setBookDetail] = useState(null);
+  useEffect(()=>{
+    const correctBook = bookShelf.find(b => b._id === bookId);
+    setBookDetail(correctBook);
+  }, [bookShelf, bookId]);
 
-    useEffect(()=>{
-      const correctBook = bookShelf.find(b => b._id === bookId);
-      setBookDetail(correctBook);
-    }, [bookShelf, bookId]);
-
-return <h1>Shelf Detail</h1>    
+  return <h1>Shelf Detail</h1>    
 }
 

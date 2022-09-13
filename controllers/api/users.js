@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../models/user');
 const Bookshelf = require('../../models/bookShelf');
-const bookShelf = require('../../models/bookShelf');
-const { UNSAFE_RouteContext } = require('react-router-dom');
+
 
 
 module.exports = {
@@ -28,21 +27,17 @@ async function login(req, res) {
 async function create(req, res) {
   try {
     const user = await User.create(req.body);
-    await bookShelf.create({userId: user._id});
-    // token is a string
+    await Bookshelf.create({userId: user._id});
     const token = createJWT(user);
-    // Yes, we can serialize (to JSON) strings
     res.json(token);
   } catch (err) {
     res.status(400).json(err);
   }
 }
 
-/*--- Helper Functions ---*/
 
 function createJWT(user) {
   return jwt.sign(
-    // additional data payload
     { user },
     process.env.SECRET,
     { expiresIn: '24h' }

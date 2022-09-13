@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
-
 const SALT_ROUNDS = 6;
 
 const userSchema = new Schema({
@@ -33,9 +32,7 @@ const userSchema = new Schema({
 });
 
 userSchema.pre('save', async function(next) {
-  // 'this' is the user doc
   if (!this.isModified('password')) return next();
-  // replace the password property with a hash
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
   return next();
 });

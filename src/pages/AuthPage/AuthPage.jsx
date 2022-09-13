@@ -12,9 +12,9 @@ export default function AuthPage({ setUser }) {
       <button className="sign-up" onClick={() => setShowLogin(!showLogin)}>{showLogin ? '🌶️Sign Up🌶️' : '🌶️Log In🌶️'}
       </button>
       { showLogin ?
-          <LoginForm setUser={setUser} />
-          :
-          <SignUpForm setUser={setUser} />
+        <LoginForm setUser={setUser} />
+        :
+        <SignUpForm setUser={setUser} />
       }
     </div>
   );

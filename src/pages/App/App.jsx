@@ -17,27 +17,31 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [bookResults, setBookResults] = useState([]); 
   const [bookShelf, setBookShelf] = useState([]);
+
+
+  
   async function getGoogleBooks(evt, search){
-  evt.preventDefault()
-  let results = await booksApi.fetchBooks(search);
-  console.log(results);
-  setBookResults(results);
+    evt.preventDefault()
+    let results = await booksApi.fetchBooks(search);
+    setBookResults(results);
   }
 
 
   async function addBook(bookId){
     let userBookShelf = await booksApi.addToShelf(bookId);
     setBookShelf(userBookShelf);
-    }
+  }
 
   useEffect(()=>{
     async function getMyShelf(){
       const books = await shelfAPI.getShelf();
-      console.log(books, 'books');
+      
       setBookShelf(books)
     }
     getMyShelf();
   }, []);
+
+ 
 
   return (
     <main className="App">
