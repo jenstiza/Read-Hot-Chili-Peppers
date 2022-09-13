@@ -18,9 +18,9 @@
     font-family: 'Press Start 2P', cursive;
     padding:1.5em;
     font-size: 1em;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-top: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
     display:inline-grid;
   }
   
@@ -43,14 +43,12 @@
   }
 
   .sign-up {
-    padding: .5em;
-    margin-left:46em;
-    margin-right: 4em;
-    margin-top: 2em;
-    margin-bottom: 4em;
-    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
+    background-color:black;
     border: .2em solid;
     border-radius: 4em;
-    display:block;
+    display:grid;
     color:white;
   }

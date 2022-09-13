@@ -12,7 +12,7 @@ export default function Shelf({ bookShelf }) {
   );
   
   
-  if (!Shelf) return null
+  if (!bookShelf) return null;
   
   return (
     <div className='shelf-page'>

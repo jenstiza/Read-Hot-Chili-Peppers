@@ -35,13 +35,14 @@ export default function App() {
   useEffect(()=>{
     async function getMyShelf(){
       const books = await shelfAPI.getShelf();
-      
+      console.log(books,'books');
       setBookShelf(books)
     }
     getMyShelf();
   }, []);
 
  
+  // if (!bookShelf) return null
 
   return (
     <main className="App">

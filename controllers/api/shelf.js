@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const express = require('express');
 const router = express.Router();
 const Bookshelf = require('../../models/bookShelf');
+const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 module.exports = {
   getAll,
