@@ -17,7 +17,7 @@ export default function BookDetail({ bookResults, addBook }) {
   return (
     <div className='book-details'>
       {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover" className='cover'/> }
-      {bookDetail && <p>Average Rating: {bookDetail.volumeInfo.averageRating} &#127798;</p>}
+      {bookDetail && <p>Average Chili Pepper Rating: {bookDetail.volumeInfo.averageRating} &#127798;</p>}
       {bookDetail && <p>Title: {bookDetail.volumeInfo.title}</p> }
       {bookDetail && <p> Authors: {bookDetail.volumeInfo.authors[0]} </p> }
       {bookDetail && <p>Description: {bookDetail.volumeInfo.description}</p>}
