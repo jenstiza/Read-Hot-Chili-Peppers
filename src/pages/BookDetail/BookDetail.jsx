@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect  } from 'react';
-import './bookDetailPage.css';
+import './bookDetail.css';
 import { Link } from 'react-router-dom';
 
 
