@@ -8,14 +8,14 @@
 
 ## Preview ##
 
-![Logging In](https://imgur.com/LCDIIht)
-![Profile](https://imgur.com/ilP0qQi)
-![Find A Book](https://imgur.com/aGOOXhi)
-![Book Search Results](https://imgur.com/mSsTfXN)
-![Top of Book Details Page](https://imgur.com/PXu5y9z)
-![Book Details Continued](https://imgur.com/nPvAr7a)
-![Top of Shelf](https://imgur.com/NA09TpK)
-![Shelf Continued](https://imgur.com/75oIjTA)
+![Logging In](https://imgur.com/LCDIIht.png)
+![Profile](https://imgur.com/ilP0qQi.png)
+![Find A Book](https://imgur.com/aGOOXhi.png)
+![Book Search Results](https://imgur.com/mSsTfXN.png)
+![Top of Book Details Page](https://imgur.com/PXu5y9z.png)
+![Book Details Continued](https://imgur.com/nPvAr7a.png)
+![Top of Shelf](https://imgur.com/NA09TpK.png)
+![Shelf Continued](https://imgur.com/75oIjTA.png)
 
 ## :hammer_and_wrench: Built With:
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
