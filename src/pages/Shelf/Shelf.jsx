@@ -2,12 +2,14 @@ import '../Shelf/Shelf.css';
 import ShelfCard from "../../components/ShelfCard/ShelfCard";
 
 
+
 export default function Shelf({ bookShelf }) {
   
   const shelfCards = bookShelf.books.map((book) => 
     <ShelfCard 
       key={book._id} 
       book={book} 
+      // user={userId}
      />
   );
   

@@ -38,8 +38,8 @@ export default function App() {
       console.log(books,'books');
       setBookShelf(books)
     }
-    getMyShelf();
-  }, []);
+    if (user) getMyShelf();
+  }, [user]);
 
  
   // if (!bookShelf) return null
@@ -54,7 +54,7 @@ export default function App() {
             <Route path='/profile' element={<Profile />} />
             <Route path='/find' element={<Find getGoogleBooks={getGoogleBooks} bookResults={bookResults} />} />
             <Route path='/find/:bookId' element={<BookDetail bookResults={bookResults} addBook={addBook}  />} /> 
-            <Route path='/shelf' element={<Shelf bookShelf={bookShelf} />} />
+            <Route path='/shelf' element={<Shelf bookShelf={bookShelf} user={user} />} />
             <Route path='/shelf/:bookId' element={<ShelfDetail bookShelf={bookShelf}  />} />
           </Routes>
         </>
