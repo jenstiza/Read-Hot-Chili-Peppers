@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SearchResults from '../../components/SearchResults/SearchResults';
-import './Find.css';
+import './FindPage.css';
 
 export default function Find({getGoogleBooks, bookResults}) {
   const [searchWord, setSearchWord] = useState('');

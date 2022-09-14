@@ -1,4 +1,4 @@
-import '../Shelf/Shelf.css';
+import './ShelfPage.css';
 import ShelfCard from "../../components/ShelfCard/ShelfCard";
 
 
