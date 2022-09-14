@@ -19,7 +19,7 @@ export default function Shelf({ bookShelf }) {
   return (
     <div className='shelf-page'>
       <div className='shelf-header'>
-        <h1>&nbsp;Time for a little Shelf Indulgence&nbsp;</h1>
+        <h1>&nbsp;&#8595;&nbsp;Time for a little Shelf Indulgence&nbsp;&#8595;&nbsp;</h1>
       </div>
       <div className='container'>
         {shelfCards}

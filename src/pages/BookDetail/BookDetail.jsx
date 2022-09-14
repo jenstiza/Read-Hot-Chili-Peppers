@@ -15,14 +15,16 @@ export default function BookDetail({ bookResults, addBook }) {
 
 
   return (
+    <div className='detail-page'>
     <div className='book-details'>
       {bookDetail && <img src={bookDetail.volumeInfo.imageLinks.thumbnail} alt="book cover" className='cover'/> }
       {bookDetail && <p>Average Chili Pepper Rating: {bookDetail.volumeInfo.averageRating} &#127798;</p>}
-      {bookDetail && <p>Title: {bookDetail.volumeInfo.title}</p> }
-      {bookDetail && <p> Authors: {bookDetail.volumeInfo.authors[0]} </p> }
-      {bookDetail && <p>Description: {bookDetail.volumeInfo.description}</p>}
+      {bookDetail && <p>Title: <br/> {bookDetail.volumeInfo.title}</p> }
+      {bookDetail && <p> Author(s): <br/>{bookDetail.volumeInfo.authors[0]} </p> }
+      {bookDetail && <p>Description: <br/> {bookDetail.volumeInfo.description}</p>}
       {bookDetail && <a href= {bookDetail.volumeInfo.previewLink}>Preview Here</a>}
       <Link to="/shelf"><button onClick={() => addBook(bookDetail)}>Add To Shelf</button></Link>
+    </div>
     </div>   
   );
 }

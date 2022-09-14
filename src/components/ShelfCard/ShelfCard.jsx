@@ -12,6 +12,7 @@ export default function ShelfCard({book}) {
       Author: {book.author}
       <br/>
       Average Chili Pepper Rating: {book.averageRating} &#127798;
+      
     </div>
   );
 }
