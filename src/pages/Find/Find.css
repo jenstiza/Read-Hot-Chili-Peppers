@@ -50,6 +50,20 @@ a:active { text-decoration: none; }
     justify-content: center;
   }
   
+.instructions{
+  color:white;
+  position: absolute;
+  bottom: 15em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5em;
+
+}
+
+
+
   .results-header{
     color: whitesmoke;
     display: grid;
